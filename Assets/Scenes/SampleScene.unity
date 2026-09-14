@@ -819,7 +819,7 @@ MonoBehaviour:
   mapa: {fileID: 336621361542206988, guid: ce2122a0624c1ab4c8c59cbcdcb51545, type: 3}
   spawnRate: 1.1
   spawnRateObj: 0.5
-  objectosLista:
+  objetosLista:
   - {fileID: 5563985711561942000, guid: ce862969444d14d4282148aa9daa59d0, type: 3}
   - {fileID: 7519219687959815984, guid: 3e3590cfb00dd00489388b890e6405ba, type: 3}
   anchorPoints:
@@ -1044,7 +1044,7 @@ Transform:
   m_GameObject: {fileID: 1121809384}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.61, y: 3, z: 90}
+  m_LocalPosition: {x: -13.61, y: 13, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1156,7 +1156,7 @@ Transform:
   m_GameObject: {fileID: 1154953458}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.28, y: 3, z: 90}
+  m_LocalPosition: {x: -4.28, y: 13, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1487,7 +1487,7 @@ Transform:
   m_GameObject: {fileID: 1724501281}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.3, y: 3, z: 90}
+  m_LocalPosition: {x: -22.3, y: 13, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
