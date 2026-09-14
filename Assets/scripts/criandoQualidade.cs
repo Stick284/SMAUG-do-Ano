@@ -14,7 +14,7 @@ public class criandoQualidade : MonoBehaviour
     [SerializeField] private float spawnRateObj = 2;
     private float objTemporado = 0;
 
-    [SerializeField] private GameObject[] objectosLista;
+    [SerializeField] private GameObject[] objetosLista;
     //[SerializeField] private GameObject obstaculo; ainda ñ fiz um item de deslizar
 
     [SerializeField] private Transform[] anchorPoints;
@@ -63,14 +63,14 @@ public class criandoQualidade : MonoBehaviour
         else
         {
             int anchorRNG = Random.Range(0, anchorPoints.Length); //escolhe qual ancora o objeto vai
-            int objRNG = Random.Range(0, objectosLista.Length);
+            int objRNG = Random.Range(0, objetosLista.Length);
 
             //var teste = new Vector3(anchorPoints[anchorRNG].position.x, transform.position.y, transform.position.z);
 
-            Instantiate(objectosLista[0], anchorPoints[anchorRNG].transform.position, transform.rotation); //transform.positon e rotation basicamente faz com que seja a mesma do objeto
-            
-            /*objectosLista[0].transform.Rotate(-90, 0, -90);
-            objectosLista[1].transform.Rotate(-90, 0, -90);*/
+            Instantiate(objetosLista[objRNG], anchorPoints[anchorRNG].transform.position, objetosLista[objRNG].transform.rotation); //transform.positon e rotation basicamente faz com que seja a mesma do objeto
+
+            /*objetosLista[0].transform.Rotate(-90, 0, -90);
+            objetosLista[1].transform.Rotate(-90, 0, -90);*/
 
             objTemporado = 0;
 
