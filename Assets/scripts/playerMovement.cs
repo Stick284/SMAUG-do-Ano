@@ -24,7 +24,7 @@ public class playerMovement : MonoBehaviour
     {
         movementPlayer();
 
-        slidePlayer(); //separei pq tava fazendo debug e curti
+        slideAndJumpPlayer(); //separei pq tava fazendo debug e curti
     }
 
     void movementPlayer()
@@ -63,9 +63,9 @@ public class playerMovement : MonoBehaviour
     }
 
 
-    private void slidePlayer()
+    private void slideAndJumpPlayer()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) && isGrounded) && canInput)
+        if ((Input.GetKeyDown(KeyCode.W) && isGrounded) && canInput)
         {
             isGrounded = false;
             playerGrav.linearVelocity = Vector3.up * playerJump;
