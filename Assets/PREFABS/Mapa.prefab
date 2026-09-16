@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4028540507074128572}
   - component: {fileID: 763028471891018028}
   - component: {fileID: 5021759452390303519}
+  - component: {fileID: 4519563340891423005}
+  - component: {fileID: 8850211225978856938}
   m_Layer: 0
   m_Name: Mapa
   m_TagString: mapaLogica
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 336621361542206988}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.02, y: -0, z: -12}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1.1248}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efccb74852f84794fab82503cc38ed80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::movementScript
-  moveSpeed: 15
+  mapaMoveSpeed: 15
+  mapa: {fileID: 336621361542206988}
   mapaLogica: {fileID: 0}
 --- !u!65 &5021759452390303519
 BoxCollider:
@@ -69,6 +72,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30.649113, y: 0.7351217, z: 17.052244}
   m_Center: {x: -23.267633, y: 0.50550044, z: 7.6119027}
+--- !u!65 &4519563340891423005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336621361542206988}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6999817, y: 14.37812, z: 17.03816}
+  m_Center: {x: -8.32999, y: 8.07906, z: 7.6390767}
+--- !u!65 &8850211225978856938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336621361542206988}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6999817, y: 14.37812, z: 17.03816}
+  m_Center: {x: -38.2, y: 8.07906, z: 7.6390767}
 --- !u!1001 &1873734745048374573
 PrefabInstance:
   m_ObjectHideFlags: 0

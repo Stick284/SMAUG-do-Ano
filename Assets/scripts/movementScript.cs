@@ -7,15 +7,18 @@ using UnityEngine;
 public class movementScript : MonoBehaviour
 {
     //variaveis                                     Podia ser public? Até podia
-    [SerializeField] private float moveSpeed = 0; //não é 100% necessário mas é boa prática
+    [SerializeField] private float mapaMoveSpeed = 0; //não é 100% necessário mas é boa prática
 
     private float speedBase; //vazio por que vamos usar mais tarde e não precissa do inspetor
     private float mediumSpeed1; //^^^^^^
 
     private int ThingToDestroy = -45;
 
+    [SerializeField] private GameObject mapa;
+
 
     public criandoQualidade mapaLogica; //com isso pode mudar a velocidade do mapa que o spawn tbm muda
+    //NÃO RESOLVI AINDA NEM SEI OQ TÁ ACONTEÇENDO
 
     void Start()
     {
@@ -39,11 +42,12 @@ public class movementScript : MonoBehaviour
         Debug.Log($"Controle de teste -> {testeAntigo}");*/
         //não sei oq eu tô fazendo de errado mais tarde eu termino isso
 
-        transform.position += (Vector3.back * moveSpeed) * Time.deltaTime;
+        transform.position += (Vector3.back * mapaMoveSpeed) * Time.deltaTime;
 
-        if(transform.position.z < ThingToDestroy)
+        if(mapa.transform.position.z < ThingToDestroy)
         {
-            Destroy(gameObject); //funcionou MUITO melhor pegando a posição na real
+            //Destroy(mapa); //funcionou MUITO melhor pegando a posição na real
+            DestroyImmediate(mapa, true);
         }
     }
 }

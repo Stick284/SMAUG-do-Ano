@@ -36,8 +36,6 @@ public class criandoQualidade : MonoBehaviour
         /*Debug.Log($"Timer {tempoTemporado}");
         Debug.Log($"Timer Spawn {spawnRate}");
         Debug.Log($"Timer Obj {spawnRateObj}");*/
-
-
     }
 
     void criadorMapa()
@@ -67,16 +65,13 @@ public class criandoQualidade : MonoBehaviour
 
             //var teste = new Vector3(anchorPoints[anchorRNG].position.x, transform.position.y, transform.position.z);
 
-            Instantiate(objetosLista[objRNG ], anchorPoints[anchorRNG].transform.position, objetosLista[objRNG].transform.rotation); //transform.positon e rotation basicamente faz com que seja a mesma do objeto
-
-            /*objetosLista[0].transform.Rotate(-90, 0, -90);
-            objetosLista[1].transform.Rotate(-90, 0, -90);*/
-
+            Instantiate(objetosLista[objRNG], anchorPoints[anchorRNG].transform.position, objetosLista[objRNG].transform.rotation); //transform.positon e rotation basicamente faz com que seja a mesma do objeto
+            
             objTemporado = 0;
 
-            Debug.Log($"Somente a posição -> {anchorPoints[anchorRNG].position}");
+            /*Debug.Log($"Somente a posição -> {anchorPoints[anchorRNG].position}");
             Debug.Log($"Transformar + Posição -> {anchorPoints[anchorRNG].transform.position}");
-            /*Debug.Log($"Ancoras Random -> {anchorRNG}");
+            Debug.Log($"Ancoras Random -> {anchorRNG}");
             Debug.Log($"Ancoras Array -> {anchorPoints[anchorRNG]}");*/
         }
     }
