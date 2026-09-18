@@ -14,11 +14,21 @@ public class veiculoScript : MonoBehaviour
     [SerializeField] private GameObject carro;
     [SerializeField] private GameObject caminhao;
 
+    [SerializeField] private Collision CarroHitbox;
+    [SerializeField] private Collision CaminhaoHitbox;
+
+    void Start()
+    {
+        
+    } 
 
     // Update is called once per frame
     void Update()
     {
         transform.position += (Vector3.back * veiculoMoveSpeed) * Time.deltaTime;
+
+        OnCollisionEnter(CarroHitbox);
+        OnCollisionEnter(CaminhaoHitbox);
 
         if (carro.transform.position.z < ThingToDestroy)
         {
@@ -30,5 +40,11 @@ public class veiculoScript : MonoBehaviour
         {
             DestroyImmediate(caminhao, true);
         }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Manin morreu");
     }
 }
