@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Delete
   - mapaLogica
+  - tudoLogica
   layers:
   - Default
   - TransparentFX

@@ -16,13 +16,12 @@ public class movementScript : MonoBehaviour
 
     [SerializeField] private GameObject mapa;
 
-
-    public criandoQualidade mapaLogica; //com isso pode mudar a velocidade do mapa que o spawn tbm muda
-    //NÃO RESOLVI AINDA NEM SEI OQ TÁ ACONTEÇENDO
+    //public criandoQualidade mapaLogica; //com isso pode mudar a velocidade do mapa que o spawn tbm muda
+    //NÃO RESOLVI AINDA, POR CONTA DE SER PREFAB ELE É TEIMOSO
 
     void Start()
     {
-        mapaLogica = GameObject.FindGameObjectWithTag("mapaLogica").GetComponent<criandoQualidade>(); //esqueçi disso ksksksksk
+        //mapaLogica = GameObject.FindGameObjectWithTag("mapaLogica").GetComponent<criandoQualidade>(); //esqueçi disso ksksksksk
     }
 
     // Update is called once per frame

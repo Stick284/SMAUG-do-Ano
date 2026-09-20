@@ -21,10 +21,16 @@ public class criandoQualidade : MonoBehaviour
     private int anchor; //deixa vazio pq o Random cuida
     //váriaveis para criar obstáculos
 
+    //chamando scripts
+    public caminhaoRaycast raycastCaminhao;
+    public carroRaycast raycastCarro;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         tempoTemporado = 2; //já pula o timer pra criar uma nova chunk pq ele demora de primeira
+
     }
 
     // Update is called once per frame
@@ -65,7 +71,7 @@ public class criandoQualidade : MonoBehaviour
 
             //var teste = new Vector3(anchorPoints[anchorRNG].position.x, transform.position.y, transform.position.z);
 
-            Instantiate(objetosLista[objRNG], anchorPoints[anchorRNG].transform.position, objetosLista[objRNG].transform.rotation); //transform.positon e rotation basicamente faz com que seja a mesma do objeto
+            Instantiate(objetosLista[1], anchorPoints[anchorRNG].transform.position, objetosLista[1].transform.rotation); //transform.positon e rotation basicamente faz com que seja a mesma do objeto
             
             objTemporado = 0;
 

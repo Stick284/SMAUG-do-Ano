@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 605876203197857301}
   - component: {fileID: 6770611041610914284}
   - component: {fileID: 462048881760520674}
+  - component: {fileID: -8445958632850878717}
   m_Layer: 0
   m_Name: Caminhao
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::veiculoScript
   veiculoMoveSpeed: 19
+  ThingToDestroy: -45
   carro: {fileID: 1029051737024714317, guid: 3e3590cfb00dd00489388b890e6405ba, type: 3}
   caminhao: {fileID: 2607793731836979437}
 --- !u!65 &462048881760520674
@@ -70,6 +72,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 17.416893, y: 5.56372, z: 5.6326056}
   m_Center: {x: 1.0348473, y: 0.92006993, z: 1.5588784}
+--- !u!114 &-8445958632850878717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607793731836979437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc14691d5319a74799ad38002ff135e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::caminhaoRaycast
+  caminhao: {fileID: 2607793731836979437}
+  rayDistance: 25
+  rayGapFix: 25
 --- !u!1001 &3131079397679917199
 PrefabInstance:
   m_ObjectHideFlags: 0

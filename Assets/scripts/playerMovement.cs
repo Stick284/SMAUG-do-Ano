@@ -11,7 +11,7 @@ public class playerMovement : MonoBehaviour
      * na real eu...não faço ideia como aplico isso pro olimpio mas faze oq futuro eu descubro depois*/
     [SerializeField] private float playerJump = 10;
     [SerializeField] private Rigidbody playerGrav;
-    [SerializeField] private GameObject player;
+    public GameObject player;
 
     private float tempoTemporado;
 
@@ -19,13 +19,15 @@ public class playerMovement : MonoBehaviour
     private bool isGrounded = true;
     private bool canInput = true;
 
-    // Update is called once per frame
+
+
     void Update()
     {
         movementPlayer();
-
-        slideAndJumpPlayer(); //separei pq tava fazendo debug e curti
+        slideAndJumpPlayer(); //separei pq tava fazendo debug e curti que ficou separado
     }
+
+
 
     void movementPlayer()
     {
@@ -75,7 +77,8 @@ public class playerMovement : MonoBehaviour
         {
             player.transform.Rotate(-90, 0, 0);
             canInput = false;
-        } else if (!canInput && tempoTemporado <= 1)
+        }
+        else if (!canInput && tempoTemporado <= 1)
         {
             tempoTemporado += Time.deltaTime;
         }

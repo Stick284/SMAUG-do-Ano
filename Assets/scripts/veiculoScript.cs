@@ -3,19 +3,18 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class veiculoScript : MonoBehaviour
 {
     //variaveis                                     Podia ser public? Até podia
     [SerializeField] private float veiculoMoveSpeed = 0; //não é 100% necessário mas é boa prática
 
-    private int ThingToDestroy = -45;
+    [SerializeField] private int ThingToDestroy = -45;
 
     [SerializeField] private GameObject carro;
     [SerializeField] private GameObject caminhao;
 
-    [SerializeField] private Collision CarroHitbox;
-    [SerializeField] private Collision CaminhaoHitbox;
 
     void Start()
     {
@@ -25,10 +24,10 @@ public class veiculoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += (Vector3.back * veiculoMoveSpeed) * Time.deltaTime;
 
-        OnCollisionEnter(CarroHitbox);
-        OnCollisionEnter(CaminhaoHitbox);
+
+
+        transform.position += (Vector3.back * veiculoMoveSpeed) * Time.deltaTime;
 
         if (carro.transform.position.z < ThingToDestroy)
         {
@@ -43,8 +42,8 @@ public class veiculoScript : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Manin morreu");
+        SceneManager.LoadScene(2);
     }
 }
