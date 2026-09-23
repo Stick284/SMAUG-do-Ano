@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1215264254}
         m_TargetAssemblyTypeName: menuScript, Assembly-CSharp
-        m_MethodName: endScene
+        m_MethodName: resetScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

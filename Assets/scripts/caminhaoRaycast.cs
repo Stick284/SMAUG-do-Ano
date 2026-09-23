@@ -23,52 +23,89 @@ public class caminhaoRaycast : MonoBehaviour
     [SerializeField] private float rayDistance = 5;
     [SerializeField] private float rayGapFix = 5;
 
-    void Start()
-    {
-        
-    }
+
+    [HideInInspector] public bool anchor0 = false; //false é bom, true é ruim
+    [HideInInspector] public bool anchor1 = false;
+    [HideInInspector] public bool anchor2 = false;
+
 
     // Update is called once per frame
     void Update()
     {
+        //debug rays
+        rayFront = new Ray(transform.position, -transform.right);
+        Debug.DrawRay(rayFront.origin, rayFront.direction * rayDistance, Color.blue);
 
         rayBack = new Ray(transform.position, transform.right);
         Debug.DrawRay(rayBack.origin, rayBack.direction * rayDistance, Color.blue);
 
-        /*rayBack = new Ray(transform.position, transform.right);
-        Debug.DrawRay(rayBack.origin, rayBack.direction * (rayDistance + rayGapFix), Color.blue);*/
+        /*anchor0 = detectRayTruck_0();
+        anchor1 = detectRayTruck_1();
+        anchor0 = detectRayTruck_2();*/
+        //isso acho que nem vai usar diretamente aqui, provavelmente vai ser no outro masi fica por via das duvidas
 
+    }
 
+    public bool detectRayTruck_0()
+    {
         //back ray
-        if(Physics.Raycast(transform.position, transform.right, out hitBack, rayDistance))
+        if (Physics.Raycast(transform.position, transform.right, out hitBack, rayDistance))
         {
-            Debug.Log($"Still in reach of {hitBack.collider.gameObject}, can't spawn things");
-
-            /*if(hitBack.collider.gameObject != null)
-            {
-                Debug.Log("Still in reach, can't spawn things");
-
-            } else
-            {
-                Debug.Log("Now you can spawn stuff!!!");
-
-            }*/
+            //Debug.Log($"Truck is still in reach of {hitBack.collider.gameObject}, can't spawn things");
+            return true;
 
         }
         else
         {
-            Debug.Log("Now can spawn stuff");
-            
+            //Debug.Log("Truck now can spawn stuff");
+            return false;
+
         }
 
-        /*
-         * //back ray
-        if(Physics.Raycast(transform.position, transform.right, out hitFront, rayDistance))
+        //front ray
+       /*if (Physics.Raycast(transform.position, -transform.right, out hitFront, rayDistance))
         {
-            Debug.Log("Still in reach, can't spawn things");
-        } else
+            //Debug.Log($"Something is in front of the truck");
+
+        }
+        else
         {
-           Debug.Log("Now you can spawn stuff!!!");
+            //Debug.Log("Nothing is in front of the truck");
+
         }*/
+    }
+
+    public bool detectRayTruck_1()
+    {
+        //back ray
+        if (Physics.Raycast(transform.position, transform.right, out hitBack, rayDistance))
+        {
+            //Debug.Log($"Truck is still in reach of {hitBack.collider.gameObject}, can't spawn things");
+            return true;
+
+        }
+        else
+        {
+            //Debug.Log("Truck now can spawn stuff");
+            return false;
+
+        }
+    }
+
+    public bool detectRayTruck_2()
+    {
+        //back ray
+        if (Physics.Raycast(transform.position, transform.right, out hitBack, rayDistance))
+        {
+            //Debug.Log($"Truck is still in reach of {hitBack.collider.gameObject}, can't spawn things");
+            return true;
+
+        }
+        else
+        {
+            //Debug.Log("Truck now can spawn stuff");
+            return false;
+
+        }
     }
 }

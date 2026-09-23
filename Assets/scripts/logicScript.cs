@@ -1,5 +1,5 @@
 /*esse script basicamente vai cuidar de tudo que não faira ideia de como eu colocaria
- * então isso vai ter TUDO mesmo que não use agora, sla a sorte ajuda que prepare né?
+ * então isso vai ter TUDO mesmo que não use agora, sla a sorte ajuda quem prepare né?
  */
 
 //bibliotecas
@@ -20,6 +20,8 @@ public class logicScript : MonoBehaviour
     //váriaveis
 
     public playerMovement playerLogic;
+
+
 
     void Start()
     {
@@ -54,5 +56,10 @@ public class logicScript : MonoBehaviour
             playerLogic.player.gameObject.SetActive(true);
 
         }
+    }
+
+    void addScore()
+    {
+        //adiciona +30 na pontuação ou algo parecido
     }
 }

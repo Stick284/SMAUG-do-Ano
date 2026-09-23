@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6770611041610914284}
   - component: {fileID: 462048881760520674}
   - component: {fileID: -8445958632850878717}
+  - component: {fileID: 1070937412482115128}
   m_Layer: 0
   m_Name: Caminhao
-  m_TagString: Untagged
+  m_TagString: tudoLogica
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +88,30 @@ MonoBehaviour:
   caminhao: {fileID: 2607793731836979437}
   rayDistance: 25
   rayGapFix: 25
+  anchor0: 0
+  anchor1: 0
+  anchor2: 0
+--- !u!65 &1070937412482115128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607793731836979437}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.64053345, y: 5.8983183, z: 5.5068207}
+  m_Center: {x: 9.820267, y: 0.97602654, z: 1.8339362}
 --- !u!1001 &3131079397679917199
 PrefabInstance:
   m_ObjectHideFlags: 0
