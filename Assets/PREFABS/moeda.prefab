@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5459943997838297345}
   - component: {fileID: 751274230592798946}
   - component: {fileID: 8137708064635914502}
+  - component: {fileID: 5406278002003649485}
   m_Layer: 0
   m_Name: moeda
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,6 +70,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39225665, y: 2.1819715, z: 2.1517935}
   m_Center: {x: 0.8537688, y: 0.99719787, z: -0.011370659}
+--- !u!114 &5406278002003649485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890681413787179346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 022f7020422b59a4bb2856ff3652e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::logicScript
+  playerLogic: {fileID: 0}
+  moeda: {fileID: 8137708064635914502}
 --- !u!1001 &2997106855714098195
 PrefabInstance:
   m_ObjectHideFlags: 0

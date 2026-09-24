@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7485535247816868935}
   - component: {fileID: 3137198542256585460}
   - component: {fileID: -5664714834981211546}
-  - component: {fileID: 1561727480020663695}
   m_Layer: 0
   m_Name: Carro
   m_TagString: tudoLogica
@@ -69,7 +68,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4.5, y: 14, z: 3.4375205}
   m_Center: {x: 0, y: -2.540328e-15, z: -0.82124007}
@@ -91,27 +90,6 @@ MonoBehaviour:
   anchor0: 0
   anchor1: 0
   anchor2: 0
---- !u!65 &1561727480020663695
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029051737024714317}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5, y: 0.37838736, z: 3.6957366}
-  m_Center: {x: 0, y: 6.959737, z: -0.8867475}
 --- !u!1001 &2798521901210340478
 PrefabInstance:
   m_ObjectHideFlags: 0

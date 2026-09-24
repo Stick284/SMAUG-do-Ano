@@ -20,23 +20,24 @@ public class logicScript : MonoBehaviour
     //váriaveis
 
     public playerMovement playerLogic;
-
+    public GameObject moeda;
 
 
     void Start()
     {
-        playerLogic = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<playerMovement>();
+        
     }   
 
     void Awake()
     {
-        
+        playerLogic = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<playerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
         onlyDebug();
+
     }
 
 
@@ -58,8 +59,20 @@ public class logicScript : MonoBehaviour
         }
     }
 
-    void addScore()
+    void addMoneyCheck()
     {
         //adiciona +30 na pontuação ou algo parecido
+
+        Debug.Log("+30");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(moeda.CompareTag("Player"))
+        {
+            addMoneyCheck();
+            DestroyImmediate(moeda);
+        }
+        
     }
 }

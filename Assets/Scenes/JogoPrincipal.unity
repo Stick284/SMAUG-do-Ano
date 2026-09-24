@@ -1233,7 +1233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4f2061d9f15924d84bc16255513ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerMovement
-  anchorPoints: []
+  anchorPoints:
+  - {fileID: 1089106216}
+  - {fileID: 919354429}
+  - {fileID: 2133751448}
   playerJump: 0
   playerGrav: {fileID: 1588514933}
   player: {fileID: 1588514927}
@@ -1250,6 +1253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::logicScript
   playerLogic: {fileID: 1262746022}
+  moeda: {fileID: 3890681413787179346, guid: f35fd5056e7732744915cc60d79fbdff, type: 3}
 --- !u!4 &1262746024
 Transform:
   m_ObjectHideFlags: 0
@@ -1827,14 +1831,14 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1262746024}
+  - {fileID: 1021614154}
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 330585546}
   - {fileID: 1588514931}
   - {fileID: 1089106216}
   - {fileID: 919354429}
   - {fileID: 2133751448}
-  - {fileID: 330585546}
-  - {fileID: 1021614154}
   - {fileID: 1724501285}
   - {fileID: 1121809388}
   - {fileID: 1154953462}
