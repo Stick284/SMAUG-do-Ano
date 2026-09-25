@@ -50,7 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::movementScript
   mapaMoveSpeed: 15
   mapa: {fileID: 336621361542206988}
-  mapaLogica: {fileID: 0}
 --- !u!65 &5021759452390303519
 BoxCollider:
   m_ObjectHideFlags: 0

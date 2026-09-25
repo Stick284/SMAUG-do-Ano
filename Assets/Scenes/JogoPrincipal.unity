@@ -1214,6 +1214,7 @@ GameObject:
   - component: {fileID: 1262746024}
   - component: {fileID: 1262746023}
   - component: {fileID: 1262746022}
+  - component: {fileID: 1262746025}
   m_Layer: 0
   m_Name: logicManager
   m_TagString: tudoLogica
@@ -1252,7 +1253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022f7020422b59a4bb2856ff3652e3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::logicScript
-  playerLogic: {fileID: 1262746022}
+  playerLogica: {fileID: 1262746022}
+  menuLogica: {fileID: 1262746025}
   moeda: {fileID: 3890681413787179346, guid: f35fd5056e7732744915cc60d79fbdff, type: 3}
 --- !u!4 &1262746024
 Transform:
@@ -1263,12 +1265,24 @@ Transform:
   m_GameObject: {fileID: 1262746021}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.61976, y: 0, z: -38.38697}
+  m_LocalPosition: {x: -13.61, y: 2.7, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262746025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262746021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec84eefc0706f4f439db8c11ce5c6fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::pontosPontos
 --- !u!1001 &1542248816
 PrefabInstance:
   m_ObjectHideFlags: 0

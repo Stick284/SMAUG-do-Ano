@@ -19,7 +19,8 @@ public class logicScript : MonoBehaviour
     bool debugCheck = false;
     //váriaveis
 
-    public playerMovement playerLogic;
+    public playerMovement playerLogica;
+    public pontosPontos menuLogica;
     public GameObject moeda;
 
 
@@ -30,7 +31,8 @@ public class logicScript : MonoBehaviour
 
     void Awake()
     {
-        playerLogic = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<playerMovement>();
+        playerLogica = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<playerMovement>();
+        menuLogica = GameObject.FindGameObjectWithTag("Player").GetComponent<pontosPontos>();
     }
 
     // Update is called once per frame
@@ -49,12 +51,12 @@ public class logicScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !debugCheck)
         {
             debugCheck = true;
-            playerLogic.player.gameObject.SetActive(false);
+            playerLogica.player.gameObject.SetActive(false);
 
         } else if (Input.GetKeyDown(KeyCode.Space) && debugCheck)
         {
             debugCheck = false;
-            playerLogic.player.gameObject.SetActive(true);
+            playerLogica.player.gameObject.SetActive(true);
 
         }
     }
@@ -71,7 +73,7 @@ public class logicScript : MonoBehaviour
         if(moeda.CompareTag("Player"))
         {
             addMoneyCheck();
-            DestroyImmediate(moeda);
+            Destroy(moeda); //isso usa em contato
         }
         
     }

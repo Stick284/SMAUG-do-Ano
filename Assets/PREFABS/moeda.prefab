@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 751274230592798946}
   - component: {fileID: 8137708064635914502}
   - component: {fileID: 5406278002003649485}
+  - component: {fileID: -7815518661357618693}
   m_Layer: 0
   m_Name: moeda
   m_TagString: Player
@@ -82,8 +83,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022f7020422b59a4bb2856ff3652e3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::logicScript
-  playerLogic: {fileID: 0}
-  moeda: {fileID: 8137708064635914502}
+  playerLogica: {fileID: 0}
+  menuLogica: {fileID: 0}
+  moeda: {fileID: 3890681413787179346}
+--- !u!114 &-7815518661357618693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890681413787179346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec84eefc0706f4f439db8c11ce5c6fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::pontosPontosPonteado
 --- !u!1001 &2997106855714098195
 PrefabInstance:
   m_ObjectHideFlags: 0

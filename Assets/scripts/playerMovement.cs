@@ -25,6 +25,7 @@ public class playerMovement : MonoBehaviour
     {
         movementPlayer();
         slideAndJumpPlayer(); //separei pq tava fazendo debug e curti que ficou separado
+
     }
 
 

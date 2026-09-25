@@ -37,7 +37,7 @@ public class veiculoScript : MonoBehaviour
 
         if (caminhao.transform.position.z < ThingToDestroy)
         {
-            DestroyImmediate(caminhao, true);
+            DestroyImmediate(caminhao, true); //isso você uso quando é destruir sem contato
         }
     }
 
