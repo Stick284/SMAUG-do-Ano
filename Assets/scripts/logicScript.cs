@@ -19,27 +19,29 @@ public class logicScript : MonoBehaviour
     bool debugCheck = false;
     //váriaveis
 
-    public playerMovement playerLogica;
-    public pontosPontos menuLogica;
-    public GameObject moeda;
+    private playerMovement playerLogica;
+    private pontosPontos pontos;
+    
 
+    
 
     void Start()
     {
-        
+        pontos = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<pontosPontos>();
+        playerLogica = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
+
     }   
 
     void Awake()
     {
-        playerLogica = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<playerMovement>();
-        menuLogica = GameObject.FindGameObjectWithTag("Player").GetComponent<pontosPontos>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         onlyDebug();
-
+        //Debug.Log($"Moedas atualmente: {pontos.economiaLixo}");
     }
 
 
@@ -61,20 +63,12 @@ public class logicScript : MonoBehaviour
         }
     }
 
-    void addMoneyCheck()
-    {
-        //adiciona +30 na pontuação ou algo parecido
-
-        Debug.Log("+30");
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if(moeda.CompareTag("Player"))
-        {
-            addMoneyCheck();
-            Destroy(moeda); //isso usa em contato
-        }
-        
+        Debug.Log("Teste");
+
+        pontos.addMoneyCheck();
     }
+
 }

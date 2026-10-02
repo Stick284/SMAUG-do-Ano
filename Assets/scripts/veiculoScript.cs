@@ -15,11 +15,16 @@ public class veiculoScript : MonoBehaviour
     [SerializeField] private GameObject carro;
     [SerializeField] private GameObject caminhao;
 
+    public Collider truck;
+    public Collider car;
+
+    public logicScript logica;
 
     void Start()
     {
-        
-    } 
+        //economia = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<pontosPontos>();
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -42,8 +47,18 @@ public class veiculoScript : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter()
     {
-        SceneManager.LoadScene(2);
+        datenaDetector(truck);
+        datenaDetector(car);
+    }
+
+    void datenaDetector(Collider other)
+    {
+        if (carro.CompareTag("Player") || caminhao.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(2);
+        }
+        
     }
 }

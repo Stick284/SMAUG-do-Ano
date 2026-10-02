@@ -21,4 +21,9 @@ public class menuScript : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void gameOverReturn()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

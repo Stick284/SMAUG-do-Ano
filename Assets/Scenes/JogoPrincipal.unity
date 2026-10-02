@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 1121809385}
   m_Layer: 0
   m_Name: AnchorMiddle 1
-  m_TagString: Untagged
+  m_TagString: tudoLogica
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1013,7 +1013,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 1154953459}
   m_Layer: 0
   m_Name: AnchorRight 2
-  m_TagString: Untagged
+  m_TagString: tudoLogica
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1125,7 +1125,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1213,7 +1213,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1262746024}
   - component: {fileID: 1262746023}
-  - component: {fileID: 1262746022}
   - component: {fileID: 1262746025}
   m_Layer: 0
   m_Name: logicManager
@@ -1222,25 +1221,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1262746022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262746021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4f2061d9f15924d84bc16255513ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::playerMovement
-  anchorPoints:
-  - {fileID: 1089106216}
-  - {fileID: 919354429}
-  - {fileID: 2133751448}
-  playerJump: 0
-  playerGrav: {fileID: 1588514933}
-  player: {fileID: 1588514927}
 --- !u!114 &1262746023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,8 +1233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022f7020422b59a4bb2856ff3652e3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::logicScript
-  playerLogica: {fileID: 1262746022}
-  menuLogica: {fileID: 1262746025}
+  playerLogica: {fileID: 0}
+  economia: {fileID: 1262746025}
   moeda: {fileID: 3890681413787179346, guid: f35fd5056e7732744915cc60d79fbdff, type: 3}
 --- !u!4 &1262746024
 Transform:
@@ -1283,6 +1263,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec84eefc0706f4f439db8c11ce5c6fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pontosPontos
+  pontos: 0
+  pontosMaximo: 0
+  economiaLixo: 0
 --- !u!1001 &1542248816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1516,7 +1499,7 @@ GameObject:
   - component: {fileID: 1724501282}
   m_Layer: 0
   m_Name: AnchorLeft 0
-  m_TagString: Untagged
+  m_TagString: tudoLogica
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1536,7 +1519,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
