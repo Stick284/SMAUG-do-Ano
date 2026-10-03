@@ -2,61 +2,34 @@ using UnityEngine;
 
 public class pontosPontos : MonoBehaviour
 {
-    [HideInInspector] public int pontos;
-    [HideInInspector] public int pontosMaximo;
-    
+
     public int economiaLixo;
-    private string pagamentoCLT = "Moedas Contagem";
-    private string pontosMax = "Pontos Maximo";
-    private string pontosMin = "Pontos Minímo";
+    [SerializeField] private int multEconomia = 1;
+    [HideInInspector] public int pontuacao;
+    [HideInInspector] public int pontuacaoMaximo;
 
-    public GameObject moeda;
+    //public GameObject moeda;
 
-    private void Start()
+   void Start()
     {
-         
+        /* FindAnyObjectByType<logicScript>()
+         * 
+         * BEM MELHOR DO QUE CHAMAR O SCRIPT NA REAL
+         * salvando pra copiar*/
     }
 
-    public void addMoneyCheck()
+
+    public void addMoneyCheck(GameObject moeda)
     {
-        if (moeda.CompareTag("Player"))
-        {
-            Destroy(moeda); //isso usa em contato
+        economiaLixo += multEconomia;
 
-            economiaLixo++;
-        }
+        //Debug.Log($"Teste -> {economiaLixo}");
 
-        //adiciona +30 na pontuação ou algo parecido
+        Destroy(moeda); //isso usa em contato
+
+        //adiciona +30 na moeda ou algo parecido
         //Debug.Log("+30");
     }
 
-
-    void moedaSave()
-    {
-        PlayerPrefs.SetInt(pagamentoCLT, economiaLixo);
-        PlayerPrefs.Save();
-    }
-    void pontosSave()
-    {
-        if(pontos > pontosMaximo)
-        {
-            pontos = pontosMaximo;
-            PlayerPrefs.SetInt(pontosMax, pontosMaximo);
-            PlayerPrefs.Save();
-        } else
-        {
-            PlayerPrefs.SetInt(pontosMin, pontos);
-            PlayerPrefs.Save();
-            //nem sei onde eu usaria os pontos minimos mas sla depois a gente da uma olhada
-        }
-    }
-
-    void moedaLoad()
-    {
-        PlayerPrefs.GetInt(pagamentoCLT, economiaLixo);
-    }
-    void pontosLoad()
-    {
-        PlayerPrefs.GetInt(pontosMax, pontosMaximo);
-    }
+    //falta agora a pont~uação pontuação msm
 }

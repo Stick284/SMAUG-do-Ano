@@ -18,11 +18,11 @@ public class veiculoScript : MonoBehaviour
     public Collider truck;
     public Collider car;
 
-    public logicScript logica;
+    //private logicScript logica;
 
     void Start()
     {
-        //economia = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<pontosPontos>();
+        //logica = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<logicScript>();
 
     }
 

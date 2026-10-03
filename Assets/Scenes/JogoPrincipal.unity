@@ -829,8 +829,6 @@ MonoBehaviour:
   - {fileID: 1121809388}
   - {fileID: 1154953462}
   moedas: {fileID: 3890681413787179346, guid: f35fd5056e7732744915cc60d79fbdff, type: 3}
-  rayCaminhao: {fileID: 1021614157}
-  rayCarro: {fileID: 1021614156}
 --- !u!114 &1021614156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,9 +1231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022f7020422b59a4bb2856ff3652e3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::logicScript
-  playerLogica: {fileID: 0}
-  economia: {fileID: 1262746025}
-  moeda: {fileID: 3890681413787179346, guid: f35fd5056e7732744915cc60d79fbdff, type: 3}
 --- !u!4 &1262746024
 Transform:
   m_ObjectHideFlags: 0
@@ -1263,9 +1258,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec84eefc0706f4f439db8c11ce5c6fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pontosPontos
-  pontos: 0
-  pontosMaximo: 0
   economiaLixo: 0
+  multEconomia: 1
+  pontuacao: 0
+  pontuacaoMaximo: 0
 --- !u!1001 &1542248816
 PrefabInstance:
   m_ObjectHideFlags: 0

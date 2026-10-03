@@ -24,8 +24,8 @@ public class criandoQualidade : MonoBehaviour
 
 
     //chamando scripts
-    public caminhaoRaycast rayCaminhao;
-    public carroRaycast rayCarro;
+    /*private caminhaoRaycast rayCaminhao;
+    private carroRaycast rayCarro;*/
 
     private bool anchorLock0;
     private bool anchorLock1;
@@ -36,8 +36,8 @@ public class criandoQualidade : MonoBehaviour
     {
         tempoTemporado = 2; //já pula o timer pra criar uma nova chunk pq ele demora de primeira
 
-        rayCaminhao = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<caminhaoRaycast>();
-        rayCarro = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<carroRaycast>();
+        /*caminhaoRaycast rayCaminhao = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<caminhaoRaycast>();
+        carroRaycast rayCarro = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<carroRaycast>();*/
 
     }
 
@@ -45,7 +45,7 @@ public class criandoQualidade : MonoBehaviour
     void Update()
     {
         criadorMapa();
-        criadorObstaculos();
+        //criadorObstaculos();
         criadorMoedas();
 
         /*anchorLock0 = rayCaminhao.detectRayTruck_0();

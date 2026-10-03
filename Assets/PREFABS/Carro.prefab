@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7485535247816868935}
   - component: {fileID: 3137198542256585460}
   - component: {fileID: -5664714834981211546}
-  - component: {fileID: -6419455791876238701}
   m_Layer: 0
   m_Name: Carro
   m_TagString: Player
@@ -94,22 +93,6 @@ MonoBehaviour:
   anchor0: 0
   anchor1: 0
   anchor2: 0
---- !u!114 &-6419455791876238701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029051737024714317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec84eefc0706f4f439db8c11ce5c6fc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::pontosPontos
-  pontos: 0
-  pontosMaximo: 0
-  economiaLixo: 0
-  PodeAcertar: 1
 --- !u!1001 &2798521901210340478
 PrefabInstance:
   m_ObjectHideFlags: 0

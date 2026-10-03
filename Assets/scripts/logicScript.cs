@@ -16,19 +16,18 @@ using UnityEngine.SceneManagement;
 public class logicScript : MonoBehaviour
 {
     //váriaveis
-    bool debugCheck = false;
+
+    private string pagamentoCLT = "Moedas Contagem";
+    private string pontosMax = "Pontos Maximo";
+    private string pontosMin = "Pontos Minímo";
     //váriaveis
 
-    private playerMovement playerLogica;
-    private pontosPontos pontos;
-    
+    //public pontosPontos pontos;
 
-    
 
     void Start()
     {
-        pontos = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<pontosPontos>();
-        playerLogica = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
+        //pontos = GetComponent<pontosPontos>();
 
     }   
 
@@ -40,35 +39,46 @@ public class logicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        onlyDebug();
-        //Debug.Log($"Moedas atualmente: {pontos.economiaLixo}");
+        //onlyDebug();
+        Debug.Log($"Moedas atualmente: {FindAnyObjectByType<pontosPontos>().economiaLixo}");
+
     }
 
-
-    void onlyDebug()
+    public void OnTriggerEnter(Collider other)
     {
-        //Debug.Log($"Debug check -> {debugCheck}");
-
-
-        if (Input.GetKeyDown(KeyCode.Space) && !debugCheck)
+        if (other.CompareTag("Player"))
         {
-            debugCheck = true;
-            playerLogica.player.gameObject.SetActive(false);
-
-        } else if (Input.GetKeyDown(KeyCode.Space) && debugCheck)
-        {
-            debugCheck = false;
-            playerLogica.player.gameObject.SetActive(true);
-
+            FindAnyObjectByType<pontosPontos>().addMoneyCheck(gameObject);
         }
     }
 
-    
-    private void OnTriggerEnter(Collider other)
+    void moedaSave()
     {
-        Debug.Log("Teste");
-
-        pontos.addMoneyCheck();
+        PlayerPrefs.SetInt(pagamentoCLT, FindAnyObjectByType<pontosPontos>().economiaLixo);
+        PlayerPrefs.Save();
+    }
+    void pontosSave()
+    {
+        if (FindAnyObjectByType<pontosPontos>().pontuacao > FindAnyObjectByType<pontosPontos>().pontuacaoMaximo)
+        {
+            FindAnyObjectByType<pontosPontos>().pontuacao = FindAnyObjectByType<pontosPontos>().pontuacaoMaximo;
+            PlayerPrefs.SetInt(pontosMax, FindAnyObjectByType<pontosPontos>().pontuacaoMaximo);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            PlayerPrefs.SetInt(pontosMin, FindAnyObjectByType<pontosPontos>().pontuacao);
+            PlayerPrefs.Save();
+            //nem sei onde eu usaria os pontos minimos mas sla depois a gente da uma olhada
+        }
     }
 
+    void moedaLoad()
+    {
+        PlayerPrefs.GetInt(pagamentoCLT, FindAnyObjectByType<pontosPontos>().economiaLixo);
+    }
+    void pontosLoad()
+    {
+        PlayerPrefs.GetInt(pontosMax, FindAnyObjectByType<pontosPontos>().pontuacaoMaximo);
+    }
 }
