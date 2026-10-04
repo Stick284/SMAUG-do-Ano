@@ -10,12 +10,23 @@ public class pontosPontos : MonoBehaviour
 
     //public GameObject moeda;
 
-   void Start()
+    logicScript logica; //BEM melhor do que eu fiz antes
+
+    void Awake()
+    {
+        logica = FindAnyObjectByType<logicScript>();
+    }
+
+    void Start()
     {
         /* FindAnyObjectByType<logicScript>()
          * 
          * BEM MELHOR DO QUE CHAMAR O SCRIPT NA REAL
          * salvando pra copiar*/
+
+        logica.moedaLoad();
+        logica.pontosLoad();
+
     }
 
 
@@ -27,9 +38,16 @@ public class pontosPontos : MonoBehaviour
 
         Destroy(moeda); //isso usa em contato
 
-        //adiciona +30 na moeda ou algo parecido
-        //Debug.Log("+30");
     }
 
     //falta agora a pont~uação pontuação msm
+    public void maxPontos()
+    {
+
+    }
+
+    public void minPontos()
+    {
+
+    }
 }

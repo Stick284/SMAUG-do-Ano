@@ -18,11 +18,20 @@ public class veiculoScript : MonoBehaviour
     public Collider truck;
     public Collider car;
 
-    //private logicScript logica;
+    logicScript logica;
+
+    void Awake()
+    {
+        logica = FindAnyObjectByType<logicScript>();
+    }
 
     void Start()
     {
         //logica = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<logicScript>();
+        /* FindAnyObjectByType<logicScript>()
+         * 
+         * BEM MELHOR DO QUE CHAMAR O SCRIPT NA REAL
+         * salvando pra copiar*/
 
     }
 
@@ -55,9 +64,11 @@ public class veiculoScript : MonoBehaviour
 
     void datenaDetector(Collider other)
     {
-        if (carro.CompareTag("Player") || caminhao.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
+            logica.moedaSave();
             SceneManager.LoadScene(2);
+            
         }
         
     }

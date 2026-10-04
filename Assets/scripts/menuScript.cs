@@ -3,13 +3,21 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement; //ISSO PRECISSA ADICIONAR
 
-
-//[RequireComponent(typeof(OnButtonClick))]
 public class menuScript : MonoBehaviour
 {
+    logicScript logica;
+
+    void Awake()
+    {
+        logica = FindAnyObjectByType<logicScript>();
+    }
+
     public void startScene()
     {
+        logica.moedaLoad();
+        logica.pontosLoad();
         SceneManager.LoadScene(1);
+
     }
 
     public void endScene()
@@ -17,13 +25,16 @@ public class menuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void resetScene()
+    public void resetScene() 
     {
         SceneManager.LoadScene(0);
     }
 
     public void gameOverReturn()
     {
+        logica.moedaLoad();
+        logica.pontosLoad();
         SceneManager.LoadScene(2);
+
     }
 }

@@ -24,12 +24,19 @@ public class criandoQualidade : MonoBehaviour
 
 
     //chamando scripts
-    /*private caminhaoRaycast rayCaminhao;
-    private carroRaycast rayCarro;*/
+    caminhaoRaycast rayCaminhao;
+    carroRaycast rayCarro;
 
     private bool anchorLock0;
     private bool anchorLock1;
     private bool anchorLock2;
+
+    void Awake()
+    {
+        rayCaminhao = FindAnyObjectByType<caminhaoRaycast>();
+        rayCarro = FindAnyObjectByType<carroRaycast>();
+
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +52,7 @@ public class criandoQualidade : MonoBehaviour
     void Update()
     {
         criadorMapa();
-        //criadorObstaculos();
+        criadorObstaculos();
         criadorMoedas();
 
         /*anchorLock0 = rayCaminhao.detectRayTruck_0();
