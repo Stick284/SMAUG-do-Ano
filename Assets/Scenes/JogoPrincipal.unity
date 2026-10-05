@@ -1262,6 +1262,10 @@ MonoBehaviour:
   multEconomia: 1
   pontuacao: 0
   pontuacaoMaximo: 0
+  contagemPermitida: 1
+  pontosTemporado: 0
+  pontosContagem: 0.25
+  pontosTotal: 0
 --- !u!1001 &1542248816
 PrefabInstance:
   m_ObjectHideFlags: 0

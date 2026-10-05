@@ -19,10 +19,12 @@ public class veiculoScript : MonoBehaviour
     public Collider car;
 
     logicScript logica;
+    pontosPontos pontos;
 
     void Awake()
     {
         logica = FindAnyObjectByType<logicScript>();
+        pontos = FindAnyObjectByType<pontosPontos>();
     }
 
     void Start()
@@ -58,6 +60,7 @@ public class veiculoScript : MonoBehaviour
 
     private void OnTriggerEnter()
     {
+        //só achei mais prático definir pra cada um sla
         datenaDetector(truck);
         datenaDetector(car);
     }
@@ -66,7 +69,11 @@ public class veiculoScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            logica.pontosSave();
             logica.moedaSave();
+
+            pontos.pontuacao = 0;
+
             SceneManager.LoadScene(2);
             
         }

@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class pontosPontos : MonoBehaviour
@@ -5,10 +6,13 @@ public class pontosPontos : MonoBehaviour
 
     public int economiaLixo;
     [SerializeField] private int multEconomia = 1;
-    [HideInInspector] public int pontuacao;
-    [HideInInspector] public int pontuacaoMaximo;
 
-    //public GameObject moeda;
+    public bool contagemPermitida;
+    [HideInInspector] public float pontosTemporado = 0;
+    public float pontosContagem = 0.15f;
+
+    public int pontuacao;
+    public int pontuacaoMaximo;
 
     logicScript logica; //BEM melhor do que eu fiz antes
 
@@ -43,11 +47,23 @@ public class pontosPontos : MonoBehaviour
     //falta agora a pont~uação pontuação msm
     public void maxPontos()
     {
+        if (contagemPermitida)
+        {
+            if (pontosTemporado < pontosContagem)
+            {
+                pontosTemporado += Time.deltaTime;
+            }
+            else
+            {
+                pontuacao++;
 
-    }
-
-    public void minPontos()
-    {
-
+                pontosTemporado = 0;
+            }
+        } else
+        {
+            Debug.Log("-------------------------------------------------");
+            Debug.Log($"Quantia de pontos atual: {pontuacao}");
+            Debug.Log($"Quantia de pontos MAXIMO atual: {pontuacaoMaximo}");
+        }
     }
 }

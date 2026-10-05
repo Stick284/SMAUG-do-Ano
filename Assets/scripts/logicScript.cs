@@ -16,12 +16,10 @@ using UnityEngine.SceneManagement;
 public class logicScript : MonoBehaviour
 {
     //váriaveis
-    private string pagamentoCLT = "Moedas Contagem";
-    private string pontosMax = "Pontos Maximo";
-    private string pontosMin = "Pontos Minímo";
+    private string pagamentoCLT = "Moedas";
+    private string pontosPontuados = "Pontuação";
 
     private int moedaQuantia;
-    private int minPontosQuantia;
     private int maxPontosQuantia;
     //váriaveis
 
@@ -29,7 +27,7 @@ public class logicScript : MonoBehaviour
 
     void Start()
     {
-
+        
     }   
 
     void Awake()
@@ -40,9 +38,14 @@ public class logicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //onlyDebug();
-        Debug.Log($"Moedas atualmente: {pontos.economiaLixo}");
-
+        pontos.maxPontos();
+        if (pontos.contagemPermitida)
+        {
+            Debug.Log($"Moedas atualmente: {pontos.economiaLixo}");
+            Debug.Log($"Pontos atualmente 1: {pontos.pontosTemporado}");
+            Debug.Log($"Pontos atualmente 2: {pontos.pontosContagem}");
+            Debug.Log($"Pontos atualmente 3: {pontos.pontuacao}");
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -60,18 +63,16 @@ public class logicScript : MonoBehaviour
     }
     public void pontosSave()
     {
-        if (pontos.pontuacao > pontos.pontuacaoMaximo)
+        if (pontos.pontuacao >= pontos.pontuacaoMaximo)
         {
-            pontos.pontuacao = pontos.pontuacaoMaximo;
-            PlayerPrefs.SetInt(pontosMax, pontos.pontuacaoMaximo);
-            PlayerPrefs.Save();
+            pontos.pontuacaoMaximo = pontos.pontuacao;
         }
-        else
-        {
-            PlayerPrefs.SetInt(pontosMin, pontos.pontuacao);
-            PlayerPrefs.Save();
-            //nem sei onde eu usaria os pontos minimos mas sla depois a gente da uma olhada
-        }
+
+        PlayerPrefs.SetInt(pontosPontuados, pontos.pontuacaoMaximo);
+        PlayerPrefs.Save();
+
+        /*PlayerPrefs.SetInt(pontosPontuados, pontos.pontuacao);
+        PlayerPrefs.Save();*/
     }
 
     public void moedaLoad()
@@ -81,7 +82,8 @@ public class logicScript : MonoBehaviour
     }
     public void pontosLoad()
     {
-        maxPontosQuantia = PlayerPrefs.GetInt(pontosMax, 0);
+        maxPontosQuantia = PlayerPrefs.GetInt(pontosPontuados, 0);
         pontos.pontuacaoMaximo = maxPontosQuantia;
+
     }
 }
