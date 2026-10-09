@@ -36,7 +36,7 @@ public class logicScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         pontos.maxPontos();
         if (pontos.contagemPermitida)
@@ -47,6 +47,7 @@ public class logicScript : MonoBehaviour
             Debug.Log($"Pontos atualmente 3: {pontos.pontuacao}");
         }
     }
+
 
     public void OnTriggerEnter(Collider other)
     {

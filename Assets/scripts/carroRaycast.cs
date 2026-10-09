@@ -27,7 +27,7 @@ public class carroRaycast : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //debug rays
         rayFront = new Ray(transform.position, -transform.up);
