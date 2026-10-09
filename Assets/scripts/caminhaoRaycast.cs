@@ -33,11 +33,11 @@ public class caminhaoRaycast : MonoBehaviour
     void FixedUpdate()
     {
         //debug rays
-        rayFront = new Ray(transform.position, -transform.right);
+        /*rayFront = new Ray(transform.position, -transform.right);
         Debug.DrawRay(rayFront.origin, rayFront.direction * rayDistance, Color.blue);
 
         rayBack = new Ray(transform.position, transform.right);
-        Debug.DrawRay(rayBack.origin, rayBack.direction * rayDistance, Color.blue);
+        Debug.DrawRay(rayBack.origin, rayBack.direction * rayDistance, Color.blue);*/
 
         /*anchor0 = detectRayTruck_0();
         anchor1 = detectRayTruck_1();

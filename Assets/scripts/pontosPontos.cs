@@ -4,7 +4,7 @@ using UnityEngine;
 public class pontosPontos : MonoBehaviour
 {
 
-    public int economiaLixo;
+    public int economiaBoa;
     [SerializeField] private int multEconomia = 1;
 
     public bool contagemPermitida;
@@ -15,10 +15,12 @@ public class pontosPontos : MonoBehaviour
     public int pontuacaoMaximo;
 
     logicScript logica; //BEM melhor do que eu fiz antes
+    menuScript menu;
 
     void Awake()
     {
         logica = FindAnyObjectByType<logicScript>();
+        menu = FindAnyObjectByType<menuScript>();
     }
 
     void Start()
@@ -36,7 +38,7 @@ public class pontosPontos : MonoBehaviour
 
     public void addMoneyCheck(GameObject moeda)
     {
-        economiaLixo += multEconomia;
+        economiaBoa += multEconomia;
 
         //Debug.Log($"Teste -> {economiaLixo}");
 
@@ -47,7 +49,7 @@ public class pontosPontos : MonoBehaviour
     //falta agora a pont~uação pontuação msm
     public void maxPontos()
     {
-        if (contagemPermitida)
+        if (contagemPermitida && !menu.menuContagem)
         {
             if (pontosTemporado < pontosContagem)
             {
@@ -57,13 +59,21 @@ public class pontosPontos : MonoBehaviour
             {
                 pontuacao++;
 
+                menu.pontuacaoPontuada.text = $"Score: {pontuacao}";
+                menu.moedaBoa.text = $"R$ {economiaBoa},00";
+
                 pontosTemporado = 0;
             }
         } else
         {
-            Debug.Log("-------------------------------------------------");
+            /*Debug.Log("-------------------------------------------------");
             Debug.Log($"Quantia de pontos atual: {pontuacao}");
-            Debug.Log($"Quantia de pontos MAXIMO atual: {pontuacaoMaximo}");
+            Debug.Log($"Quantia de pontos maximo atual: {pontuacaoMaximo}");
+            Debug.Log($"Quantia de Moedas {economiaBoa}");*/
+
+            
+
+            //debug
         }
     }
 }

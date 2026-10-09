@@ -24,28 +24,37 @@ public class logicScript : MonoBehaviour
     //váriaveis
 
     pontosPontos pontos; //BEM melhor do que eu fiz antes
+    menuScript menu;
 
-    void Start()
+    /*void Start()
     {
-        
-    }   
+        menu.pontuacaoPontuada.text = $"Score: {pontos.pontuacao}";
+        menu.moedaBoa.text = $"R$ {pontos.economiaBoa},00";
+    }*/
 
     void Awake()
     {
         pontos = FindAnyObjectByType<pontosPontos>();
+        menu = FindAnyObjectByType<menuScript>();
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         pontos.maxPontos();
-        if (pontos.contagemPermitida)
+
+        /*if (pontos.contagemPermitida)
         {
-            Debug.Log($"Moedas atualmente: {pontos.economiaLixo}");
+            Debug.Log("----------------------------------------------");
+            Debug.Log($"Moedas atualmente: {pontos.economiaBoa}");
             Debug.Log($"Pontos atualmente 1: {pontos.pontosTemporado}");
             Debug.Log($"Pontos atualmente 2: {pontos.pontosContagem}");
             Debug.Log($"Pontos atualmente 3: {pontos.pontuacao}");
-        }
+            
+            //debug
+             
+        }*/
     }
 
 
@@ -59,7 +68,7 @@ public class logicScript : MonoBehaviour
 
     public void moedaSave()
     {
-        PlayerPrefs.SetInt(pagamentoCLT, pontos.economiaLixo);
+        PlayerPrefs.SetInt(pagamentoCLT, pontos.economiaBoa);
         PlayerPrefs.Save();
     }
     public void pontosSave()
@@ -79,7 +88,7 @@ public class logicScript : MonoBehaviour
     public void moedaLoad()
     {
         moedaQuantia = PlayerPrefs.GetInt(pagamentoCLT, 0); //0 é o default, se não encontrar valor define 0
-        pontos.economiaLixo = moedaQuantia;
+        pontos.economiaBoa = moedaQuantia;
     }
     public void pontosLoad()
     {
