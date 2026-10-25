@@ -8,7 +8,7 @@ public class pontosPontos : MonoBehaviour
     [SerializeField] private int multEconomia = 1;
 
     public bool contagemPermitida;
-    [HideInInspector] public float pontosTemporado = 0;
+    [HideInInspector] public float pontosTemporado;
     public float pontosContagem = 0.15f;
 
     public int pontuacao;
@@ -59,7 +59,7 @@ public class pontosPontos : MonoBehaviour
             {
                 pontuacao++;
 
-                menu.pontuacaoPontuada.text = $"Score: {pontuacao}";
+                menu.pontuacaoPontuada.text = $"Distancia: {pontuacao}";
                 menu.moedaBoa.text = $"R$ {economiaBoa},00";
 
                 pontosTemporado = 0;

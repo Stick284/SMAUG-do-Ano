@@ -10,8 +10,8 @@ public class menuScript : MonoBehaviour
     logicScript logica;
     pontosPontos pontos;
     
-    public TextMeshPro pontuacaoPontuada;
-    public TextMeshPro moedaBoa;
+    public TextMeshProUGUI pontuacaoPontuada;
+    public TextMeshProUGUI moedaBoa;
     public bool menuContagem;
 
     void Awake()
@@ -24,7 +24,7 @@ public class menuScript : MonoBehaviour
     {
         if (menuContagem)
         {
-            pontuacaoPontuada.SetText($"Highscore: {pontos.pontuacaoMaximo}");
+            pontuacaoPontuada.SetText($"Distancia Máxima: {pontos.pontuacaoMaximo}");
             moedaBoa.SetText($"R$ {pontos.economiaBoa},00");
         }
     }

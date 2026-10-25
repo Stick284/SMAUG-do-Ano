@@ -21,10 +21,15 @@ public class logicScript : MonoBehaviour
 
     private int moedaQuantia;
     private int maxPontosQuantia;
+
+    private float tempoSpeed;
+    public float contagemSpeed = 0.15f;
     //váriaveis
 
     pontosPontos pontos; //BEM melhor do que eu fiz antes
     menuScript menu;
+    criandoQualidade mapaCriador;
+    movementScript mapaSpeed;
 
     /*void Start()
     {
@@ -36,6 +41,8 @@ public class logicScript : MonoBehaviour
     {
         pontos = FindAnyObjectByType<pontosPontos>();
         menu = FindAnyObjectByType<menuScript>();
+        mapaCriador = FindAnyObjectByType<criandoQualidade>();
+        mapaSpeed = FindAnyObjectByType<movementScript>();
 
     }
 
@@ -43,6 +50,25 @@ public class logicScript : MonoBehaviour
     void FixedUpdate()
     {
         pontos.maxPontos();
+        //speedAumenta();
+
+        Debug.Log($"Mapa speed {mapaSpeed.mapaMoveSpeed}");
+        Debug.Log($"Mapa spawn {mapaCriador.spawnRate}");
+        /*Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");
+        Debug.Log($"");*/
+
 
         /*if (pontos.contagemPermitida)
         {
@@ -57,6 +83,28 @@ public class logicScript : MonoBehaviour
         }*/
     }
 
+    public void speedAumenta()
+    {
+        if (tempoSpeed < contagemSpeed)
+        {
+            tempoSpeed += Time.deltaTime;
+        }
+        else
+        {
+            mapaSpeed.mapaMoveSpeed += 0.02f;
+            mapaCriador.spawnRate -= 0.002f;
+        }
+
+        if (mapaCriador.spawnRate <= 0.2)
+        {
+            mapaCriador.spawnRate = 0.2f;
+        }
+        if (mapaSpeed.mapaMoveSpeed >= 30)
+        {
+            mapaSpeed.mapaMoveSpeed = 30;
+        }
+
+    }
 
     public void OnTriggerEnter(Collider other)
     {

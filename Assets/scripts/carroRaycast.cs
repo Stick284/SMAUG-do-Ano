@@ -30,11 +30,11 @@ public class carroRaycast : MonoBehaviour
     void FixedUpdate()
     {
         //debug rays
-        rayFront = new Ray(transform.position, -transform.up);
+        /*rayFront = new Ray(transform.position, -transform.up);
         Debug.DrawRay(rayFront.origin, rayFront.direction * rayDistance, Color.blue);
 
         rayBack = new Ray(transform.position, transform.up);
-        Debug.DrawRay(rayBack.origin, rayBack.direction * rayDistance, Color.blue);
+        Debug.DrawRay(rayBack.origin, rayBack.direction * rayDistance, Color.blue);*/
 
         /*anchor0 = detectRayCar_0();
         anchor1 = detectRayCar_1();

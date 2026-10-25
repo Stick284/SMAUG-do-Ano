@@ -9,11 +9,11 @@ public class criandoQualidade : MonoBehaviour
 
     //esse tem que ser public pq to usando comunicação entre dois scripts
     public float spawnRate = 2;
-    [SerializeField] private float spawnRateObj = 2;
+    [HideInInspector] public float spawnRateObj = 2;
 
-    private float tempoTemporado = 0;
-    private float objTemporado = 0;
-    private float moedasTemporado = 0;
+    [HideInInspector] public float tempoTemporado = 0;
+    [HideInInspector] public float objTemporado = 0;
+    [HideInInspector] public float moedasTemporado = 0;
 
 
     [SerializeField] private GameObject[] objetosLista;
@@ -59,7 +59,7 @@ public class criandoQualidade : MonoBehaviour
         anchorLock1 = rayCaminhao.detectRayTruck_1();
         anchorLock2 = rayCaminhao.detectRayTruck_2();*/
         //isso verifica se pode ou não usar o instantiate
-        //NÃO ESTÁ COMPLETO É QUE É 2 DA MADRU E N TO COM CABEÇA QwQ
+        //NÃO ESTÁ COMPLETO É QUE ERA 2 DA MADRU E Ñ TO COM CABEÇA QwQ
 
     }
 

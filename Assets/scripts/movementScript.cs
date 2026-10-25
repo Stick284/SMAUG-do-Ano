@@ -6,42 +6,21 @@ using UnityEngine;
 
 public class movementScript : MonoBehaviour
 {
-    //variaveis                                     Podia ser public? Até podia
-    [SerializeField] private float mapaMoveSpeed = 0; //não é 100% necessário mas é boa prática
+    //variaveis                                     
+    public float mapaMoveSpeed = 15;
 
-    private float speedBase; //vazio por que vamos usar mais tarde e não precissa do inspetor
-    private float mediumSpeed1; //^^^^^^
+    [HideInInspector] public float speedBase; //vazio por que vamos usar mais tarde e não precissa do inspetor
+    [HideInInspector] public float mediumSpeed1; //^^^^^^
 
-    private int ThingToDestroy = -45;
+    [HideInInspector] public int ThingToDestroy = -45;
 
-    [SerializeField] private GameObject mapa;
+    [SerializeField] private GameObject mapa; //não é 100% necessário mas é boa prática, já que public funciona
 
-    //public criandoQualidade mapaLogica; //com isso pode mudar a velocidade do mapa que o spawn tbm muda
-    //NÃO RESOLVI AINDA, POR CONTA DE SER PREFAB ELE É TEIMOSO
-
-    void Start()
-    {
-        //mapaLogica = GameObject.FindGameObjectWithTag("mapaLogica").GetComponent<criandoQualidade>(); //esqueçi disso ksksksksk
-    }
 
     // Update is called once per frame
     void Update()
     {
-        /*speedBase = moveSpeed / mapaLogica.spawnRate; //media, assim pode alterar um que o outro acompanha
-        mediumSpeed1 = moveSpeed;
-        float mediumSpeed2 = mediumSpeed1 * speedBase;
-
-        float testeAntigo = speedBase * mapaLogica.spawnRate;
-
-        Debug.Log($"Move speed -> {moveSpeed}");
-        Debug.Log($"Base speed -> {speedBase}");
-        Debug.Log($"Medium speed part 1 -> {mediumSpeed1}");
-        Debug.Log($"Medium speed part 2 -> {mediumSpeed2}"); //TEM QUE SER 15 SE O SPAWN RATE FOR 1.1
-
-        Debug.Log($"Controle de teste -> {testeAntigo}");*/
-        //não sei oq eu tô fazendo de errado mais tarde eu termino isso
-
-        transform.position += (Vector3.back * mapaMoveSpeed) * Time.deltaTime;
+            transform.position += (Vector3.back * mapaMoveSpeed) * Time.deltaTime;
 
         if(mapa.transform.position.z < ThingToDestroy)
         {
