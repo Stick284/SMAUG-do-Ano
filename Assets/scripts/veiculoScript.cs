@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class veiculoScript : MonoBehaviour
 {
     //variaveis                                     Podia ser public? Até podia
-    [SerializeField] private float veiculoMoveSpeed = 0; //não é 100% necessário mas é boa prática
+    public float obstaculoSpeed = 0; //não é 100% necessário mas é boa prática
 
     [SerializeField] private int ThingToDestroy = -45;
 
@@ -40,7 +40,7 @@ public class veiculoScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += (Vector3.back * veiculoMoveSpeed) * Time.deltaTime;
+        transform.position += (Vector3.back * obstaculoSpeed) * Time.deltaTime;
 
         if (carro.transform.position.z < ThingToDestroy)
         {

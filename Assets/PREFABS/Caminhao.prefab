@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6956358513bbc9246842b5bb86ddeafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::veiculoScript
-  veiculoMoveSpeed: 19
+  obstaculoSpeed: 19
   ThingToDestroy: -45
   carro: {fileID: 1029051737024714317, guid: 3e3590cfb00dd00489388b890e6405ba, type: 3}
   caminhao: {fileID: 2607793731836979437}
@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022f7020422b59a4bb2856ff3652e3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::logicScript
+  timerDificuldade: 0.15
+  "mapaEspa\xE7o": 15
 --- !u!1001 &3131079397679917199
 PrefabInstance:
   m_ObjectHideFlags: 0

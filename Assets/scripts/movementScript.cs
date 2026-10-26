@@ -25,7 +25,7 @@ public class movementScript : MonoBehaviour
         if(mapa.transform.position.z < ThingToDestroy)
         {
             //Destroy(mapa); //funcionou MUITO melhor pegando a posição na real
-            DestroyImmediate(mapa, true);
+            DestroyImmediate(mapa, true); //para quando não tem colisão agente uso o immediate
         }
     }
 }

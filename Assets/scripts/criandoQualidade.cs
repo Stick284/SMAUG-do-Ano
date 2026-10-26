@@ -9,7 +9,7 @@ public class criandoQualidade : MonoBehaviour
 
     //esse tem que ser public pq to usando comunicação entre dois scripts
     public float spawnRate = 2;
-    [HideInInspector] public float spawnRateObj = 2;
+    public float spawnRateObj = 2;
 
     [HideInInspector] public float tempoTemporado = 0;
     [HideInInspector] public float objTemporado = 0;
@@ -24,19 +24,21 @@ public class criandoQualidade : MonoBehaviour
 
 
     //chamando scripts
-    caminhaoRaycast rayCaminhao;
+    /*caminhaoRaycast rayCaminhao;
     carroRaycast rayCarro;
 
     private bool anchorLock0;
     private bool anchorLock1;
     private bool anchorLock2;
+    
+     
 
     void Awake()
     {
         rayCaminhao = FindAnyObjectByType<caminhaoRaycast>();
         rayCarro = FindAnyObjectByType<carroRaycast>();
 
-    }
+    }*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

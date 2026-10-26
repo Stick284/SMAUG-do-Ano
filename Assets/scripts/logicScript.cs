@@ -16,20 +16,25 @@ using UnityEngine.SceneManagement;
 public class logicScript : MonoBehaviour
 {
     //váriaveis
+    private bool dificuldadeCheck = false;
     private string pagamentoCLT = "Moedas";
     private string pontosPontuados = "Pontuação";
 
     private int moedaQuantia;
     private int maxPontosQuantia;
 
-    private float tempoSpeed;
-    public float contagemSpeed = 0.15f;
+    private float tempoSpeed = 2;
+    public float timerDificuldade = 2;
+
+
+   [SerializeField] float mapaEspaço = 15f; //sabendo que 1 spawn rate e 15 mapa speed ficam basicamente perfeitos.
     //váriaveis
 
     pontosPontos pontos; //BEM melhor do que eu fiz antes
     menuScript menu;
     criandoQualidade mapaCriador;
     movementScript mapaSpeed;
+    veiculoScript obstaculoLogica;
 
     /*void Start()
     {
@@ -43,6 +48,7 @@ public class logicScript : MonoBehaviour
         menu = FindAnyObjectByType<menuScript>();
         mapaCriador = FindAnyObjectByType<criandoQualidade>();
         mapaSpeed = FindAnyObjectByType<movementScript>();
+        obstaculoLogica = FindAnyObjectByType<veiculoScript>();
 
     }
 
@@ -50,60 +56,52 @@ public class logicScript : MonoBehaviour
     void FixedUpdate()
     {
         pontos.maxPontos();
-        //speedAumenta();
+        //dificuladeAumenta();
 
+        Debug.Log($"-------------------------------------------------");
         Debug.Log($"Mapa speed {mapaSpeed.mapaMoveSpeed}");
         Debug.Log($"Mapa spawn {mapaCriador.spawnRate}");
-        /*Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");
-        Debug.Log($"");*/
-
-
-        /*if (pontos.contagemPermitida)
-        {
-            Debug.Log("----------------------------------------------");
-            Debug.Log($"Moedas atualmente: {pontos.economiaBoa}");
-            Debug.Log($"Pontos atualmente 1: {pontos.pontosTemporado}");
-            Debug.Log($"Pontos atualmente 2: {pontos.pontosContagem}");
-            Debug.Log($"Pontos atualmente 3: {pontos.pontuacao}");
-            
-            //debug
-             
-        }*/
+        //Debug.Log($"Obstaculo speed {obstaculoLogica.obstaculoSpeed}");
+        Debug.Log($"Obstaculo spawn {mapaCriador.spawnRateObj}");
+        Debug.Log($"timer speed {tempoSpeed}");
+        Debug.Log($"timer dificuldade {timerDificuldade}");
+        Debug.Log($"-------------------------------------------------");
     }
 
-    public void speedAumenta()
+    public void dificuladeAumenta()
     {
-        if (tempoSpeed < contagemSpeed)
+        /*if (tempoSpeed < 2 && dificuldadeCheck!)
         {
-            tempoSpeed += Time.deltaTime;
+            tempoSpeed -= Time.deltaTime;
+        } else
+        {
+            dificuldadeCheck = true;
+        } //isso basicamente resolve o jogo travando logo na cara*/
+
+        if (tempoSpeed < timerDificuldade)
+        {
+            tempoSpeed -= Time.deltaTime;
         }
         else
         {
-            mapaSpeed.mapaMoveSpeed += 0.02f;
-            mapaCriador.spawnRate -= 0.002f;
-        }
+            tempoSpeed = 0;
 
-        if (mapaCriador.spawnRate <= 0.2)
-        {
-            mapaCriador.spawnRate = 0.2f;
-        }
-        if (mapaSpeed.mapaMoveSpeed >= 30)
-        {
-            mapaSpeed.mapaMoveSpeed = 30;
-        }
+            mapaSpeed.mapaMoveSpeed += 0.2f;
+            obstaculoLogica.obstaculoSpeed += 0.2f;
 
+            if (mapaSpeed.mapaMoveSpeed >= 60 || obstaculoLogica.obstaculoSpeed >= 76)
+            {
+                mapaSpeed.mapaMoveSpeed = 60;
+                obstaculoLogica.obstaculoSpeed = 76;
+
+                mapaCriador.spawnRate = 0.25f;
+                mapaCriador.spawnRateObj = 0.5f;
+            }
+
+            mapaCriador.spawnRate = mapaEspaço / mapaSpeed.mapaMoveSpeed;
+
+            mapaCriador.spawnRateObj = mapaEspaço / obstaculoLogica.obstaculoSpeed;
+        }
     }
 
     public void OnTriggerEnter(Collider other)
