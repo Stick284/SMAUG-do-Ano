@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class veiculoScript : MonoBehaviour
 {
     //variaveis                                     Podia ser public? Até podia
-    public float obstaculoSpeed = 0; //não é 100% necessário mas é boa prática
+    [SerializeField] private float obstaculoSpeed = 0; //não é 100% necessário mas é boa prática
 
     [SerializeField] private int ThingToDestroy = -45;
 
@@ -21,19 +21,10 @@ public class veiculoScript : MonoBehaviour
     logicScript logica;
     pontosPontos pontos;
 
-    void Awake()
+    void Start()
     {
         logica = FindAnyObjectByType<logicScript>();
         pontos = FindAnyObjectByType<pontosPontos>();
-    }
-
-    void Start()
-    {
-        //logica = GameObject.FindGameObjectWithTag("tudoLogica").GetComponent<logicScript>();
-        /* FindAnyObjectByType<logicScript>()
-         * 
-         * BEM MELHOR DO QUE CHAMAR O SCRIPT NA REAL
-         * salvando pra copiar*/
 
     }
 
@@ -53,7 +44,6 @@ public class veiculoScript : MonoBehaviour
             DestroyImmediate(caminhao, true); //isso você uso quando é destruir sem contato
         }
     }
-
 
     private void OnTriggerEnter()
     {

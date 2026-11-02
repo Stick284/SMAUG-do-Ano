@@ -1313,7 +1313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022f7020422b59a4bb2856ff3652e3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::logicScript
-  timerDificuldade: 2
   "mapaEspa\xE7o": 15
 --- !u!4 &1262746024
 Transform:
@@ -1653,7 +1652,7 @@ Transform:
   m_GameObject: {fileID: 1588514927}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.36, y: 17.28, z: -19}
+  m_LocalPosition: {x: -59.72421, y: 3.73, z: -19}
   m_LocalScale: {x: 1.7601, y: 1.7601, z: 1.7601}
   m_ConstrainProportionsScale: 0
   m_Children: []

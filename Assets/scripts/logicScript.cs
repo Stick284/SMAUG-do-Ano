@@ -23,9 +23,6 @@ public class logicScript : MonoBehaviour
     private int moedaQuantia;
     private int maxPontosQuantia;
 
-    private float tempoSpeed = 2;
-    public float timerDificuldade = 2;
-
 
    [SerializeField] float mapaEspaço = 15f; //sabendo que 1 spawn rate e 15 mapa speed ficam basicamente perfeitos.
     //váriaveis

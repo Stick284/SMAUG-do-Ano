@@ -9,9 +9,6 @@ public class movementScript : MonoBehaviour
     //variaveis                                     
     public float mapaMoveSpeed = 15;
 
-    [HideInInspector] public float speedBase; //vazio por que vamos usar mais tarde e não precissa do inspetor
-    [HideInInspector] public float mediumSpeed1; //^^^^^^
-
     [HideInInspector] public int ThingToDestroy = -45;
 
     [SerializeField] private GameObject mapa; //não é 100% necessário mas é boa prática, já que public funciona
