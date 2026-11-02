@@ -31,11 +31,7 @@ public class logicScript : MonoBehaviour
     //váriaveis
 
     pontosPontos pontos; //BEM melhor do que eu fiz antes
-    menuScript menu;
-    criandoQualidade mapaCriador;
-    movementScript mapaSpeed;
-    veiculoScript obstaculoLogica;
-
+    
     /*void Start()
     {
         menu.pontuacaoPontuada.text = $"Score: {pontos.pontuacao}";
@@ -45,10 +41,6 @@ public class logicScript : MonoBehaviour
     void Awake()
     {
         pontos = FindAnyObjectByType<pontosPontos>();
-        menu = FindAnyObjectByType<menuScript>();
-        mapaCriador = FindAnyObjectByType<criandoQualidade>();
-        mapaSpeed = FindAnyObjectByType<movementScript>();
-        obstaculoLogica = FindAnyObjectByType<veiculoScript>();
 
     }
 
@@ -56,53 +48,8 @@ public class logicScript : MonoBehaviour
     void FixedUpdate()
     {
         pontos.maxPontos();
-        //dificuladeAumenta();
-
-        Debug.Log($"-------------------------------------------------");
-        Debug.Log($"Mapa speed {mapaSpeed.mapaMoveSpeed}");
-        Debug.Log($"Mapa spawn {mapaCriador.spawnRate}");
-        //Debug.Log($"Obstaculo speed {obstaculoLogica.obstaculoSpeed}");
-        Debug.Log($"Obstaculo spawn {mapaCriador.spawnRateObj}");
-        Debug.Log($"timer speed {tempoSpeed}");
-        Debug.Log($"timer dificuldade {timerDificuldade}");
-        Debug.Log($"-------------------------------------------------");
     }
 
-    public void dificuladeAumenta()
-    {
-        /*if (tempoSpeed < 2 && dificuldadeCheck!)
-        {
-            tempoSpeed -= Time.deltaTime;
-        } else
-        {
-            dificuldadeCheck = true;
-        } //isso basicamente resolve o jogo travando logo na cara*/
-
-        if (tempoSpeed < timerDificuldade)
-        {
-            tempoSpeed -= Time.deltaTime;
-        }
-        else
-        {
-            tempoSpeed = 0;
-
-            mapaSpeed.mapaMoveSpeed += 0.2f;
-            obstaculoLogica.obstaculoSpeed += 0.2f;
-
-            if (mapaSpeed.mapaMoveSpeed >= 60 || obstaculoLogica.obstaculoSpeed >= 76)
-            {
-                mapaSpeed.mapaMoveSpeed = 60;
-                obstaculoLogica.obstaculoSpeed = 76;
-
-                mapaCriador.spawnRate = 0.25f;
-                mapaCriador.spawnRateObj = 0.5f;
-            }
-
-            mapaCriador.spawnRate = mapaEspaço / mapaSpeed.mapaMoveSpeed;
-
-            mapaCriador.spawnRateObj = mapaEspaço / obstaculoLogica.obstaculoSpeed;
-        }
-    }
 
     public void OnTriggerEnter(Collider other)
     {
